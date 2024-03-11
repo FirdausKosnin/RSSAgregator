@@ -8,10 +8,10 @@ import (
 )
 
 type User struct {
-	ID        uuid.UUID `json: "id"`
-	CreatedAt time.Time `json: "created_at"`
-	UpdatedAt time.Time `json: "updated_at"`
-	Name      string    `json: "name"`
+	ID        uuid.UUID `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+	Name      string    `json:"name"`
 	APIKey    string    `json:"api_key"`
 }
 
@@ -26,12 +26,12 @@ func databaseUserToUser(dbuser database.User) User {
 }
 
 type Feed struct {
-	ID        uuid.UUID `json: "id"`
-	CreatedAt time.Time `json: "created_at"`
-	UpdatedAt time.Time `json: "updated_at"`
-	Name      string    `json: "name"`
-	Url       string    `json: "url"`
-	UserID    uuid.UUID `json: "user_id"`
+	ID        uuid.UUID `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+	Name      string    `json:"name"`
+	Url       string    `json:"url"`
+	UserID    uuid.UUID `json:"user_id"`
 }
 
 func databaseFeedtoFeed(dbFeed database.Feed) Feed {
@@ -54,11 +54,11 @@ func databaseFeedstoFeeds(dbFeeds []database.Feed) []Feed {
 }
 
 type FeedFollow struct {
-	ID        uuid.UUID `json: "id"`
-	CreatedAt time.Time `json: "created_at"`
-	UpdatedAt time.Time `json: "updated_at"`
-	UserID    uuid.UUID `json: "user_id"`
-	FeedID    uuid.UUID `json: "feed_id"`
+	ID        uuid.UUID `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+	UserID    uuid.UUID `json:"user_id"`
+	FeedID    uuid.UUID `json:"feed_id"`
 }
 
 func databaseFeedFollowtoFeedFollow(dbFeedFollow database.FeedFollow) FeedFollow {
