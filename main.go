@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -21,11 +20,6 @@ type apiConfig struct {
 }
 
 func main() {
-	feed, err := urlToFeed("https://wagslane.dev/index.xml")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(feed)
 	godotenv.Load(".env")
 
 	portString := os.Getenv("PORT")
@@ -78,6 +72,8 @@ func main() {
 	v1Rounter.Post("/feed_follows", apiCfg.middlewareAuth(apiCfg.handlerCreateFeedFollow))
 	v1Rounter.Get("/feed_follows", apiCfg.middlewareAuth(apiCfg.handlerGetFeedFollow))
 	v1Rounter.Delete("/feed_follows/{feedFollowID}", apiCfg.middlewareAuth(apiCfg.handlerDeleteFeedFollow))
+
+	v1Rounter.Get("/posts", apiCfg.middlewareAuth(apiCfg.handlerGetPostForUser))
 
 	router.Mount("/v1", v1Rounter)
 
