@@ -2,12 +2,12 @@
 
 ## Overview
 
-This project is a personal endeavor focused on learning how to develop an RSS Aggregator while also gaining proficiency in REST API and Go development. The goal is to create a platform where users can subscribe to and manage RSS feeds from various sources, as well as follow their own posts through user accounts.
+This project is a personal project focused on learning how to develop an RSS Aggregator while also gaining proficiency in REST API and Go development. The goal is to create a platform where users can subscribe to and manage RSS feeds from various sources, as well as follow their posts through user accounts.
 
 ## Features
 
 - **RSS Feed Subscription:** Users can add and manage RSS feeds from different sources.
-- **User Accounts:** Users can create accounts to follow their own posts and manage subscriptions.
+- **User Accounts:** Users can create accounts to follow their posts and manage subscriptions.
 - **Feed Updates:** Automatically fetches and updates feeds at regular intervals.
 - **Local Database:** Stores user preferences and subscriptions in a PostgreSQL database.
 
